@@ -9,15 +9,30 @@ import { AppContainer } from 'react-hot-loader';
 
 const store = createStore(reducer);
 
- store.subscribe(() => {
-   console.log(store.getState());
- })
+store.subscribe(() => {
+  console.log(store.getState());
+})
 
-ReactDOM.render(
-  <AppContainer>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </AppContainer>,
-  document.getElementById('root')
-);
+// вебсокет с экспрессом
+const sock = new WebSocket('ws://localhost:5000/');
+sock.onmessage = function(msg) {
+  console.log(msg.data);
+}
+//
+
+const render = (Component) => {
+  ReactDOM.render(
+    <AppContainer>
+      <Provider store={store}>
+        <Component />
+      </Provider>
+    </AppContainer>,
+    document.getElementById('root')
+  );
+}
+
+render(App);
+
+if (module.hot) {
+  module.hot.accept('./App', () => { render(App) });
+}
