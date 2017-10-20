@@ -1,0 +1,14 @@
+/*
+.user {
+  border: 1px solid grey;
+  overflow: hidden;
+  padding: 10px;
+  margin: 10px;
+}
+*/
+
+.user {
+  float: right;
+  white-space: pre;
+  /*text-align: right;*/
+}

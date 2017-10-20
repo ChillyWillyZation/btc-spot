@@ -1,0 +1,17 @@
+li {
+  color: green;
+  list-style-type: none;
+}
+
+li:nth-of-type(1), li:nth-of-type(2) {
+  color: red;
+}
+
+
+li::after {
+  content: " торги завершены";
+}
+
+li:nth-of-type(1)::after, li:nth-of-type(2)::after {
+  content: " ставки приняты";
+}

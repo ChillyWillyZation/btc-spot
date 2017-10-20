@@ -1,0 +1,14 @@
+.totalizator {
+  border: 1px solid grey;
+  overflow: hidden;
+  padding: 10px;
+  margin: 10px;
+}
+
+input {
+  margin: 5px;
+}
+
+input[type="text"] {
+  width: 50%;
+}
